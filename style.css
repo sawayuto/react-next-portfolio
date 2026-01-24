@@ -1,0 +1,358 @@
+/* ===== リセット ===== */
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: "Segoe UI", sans-serif;
+
+}
+
+/* ===== 全体背景 ===== */
+
+body {
+
+  min-height: 100vh;
+
+  background: linear-gradient(135deg, #4f7cff, #6fd6ff);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: #333;
+
+  transition: background 0.3s, color 0.3s;
+
+}
+
+/* ダークモード */
+
+body.dark {
+
+  background: linear-gradient(135deg, #111, #333);
+
+  color: #eee;
+
+}
+
+/* ===== モード切替ボタン ===== */
+
+.mode {
+
+  position: fixed;
+
+  top: 20px;
+
+  right: 20px;
+
+  background: #fff;
+
+  border: none;
+
+  padding: 10px 14px;
+
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+}
+
+/* ===== レイアウト ===== */
+
+.container {
+
+  width: 100%;
+
+  max-width: 900px;
+
+  padding: 20px;
+
+}
+
+.card {
+
+  background: #fff;
+
+  border-radius: 20px;
+
+  padding: 40px;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+
+  animation: fadeUp 0.8s ease;
+
+}
+
+body.dark .card {
+
+  background: #1e1e1e;
+
+}
+
+/* ===== プロフィール ===== */
+
+.profile {
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+}
+
+.avatar {
+
+  width: 120px;
+
+  height: 120px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #6fd6ff, #4f7cff);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 48px;
+
+  color: #fff;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+}
+
+/* ===== タイトル ===== */
+
+h1 {
+
+  text-align: center;
+
+  font-size: 36px;
+
+  margin-bottom: 10px;
+
+}
+
+.tag {
+
+  text-align: center;
+
+  display: inline-block;
+
+  margin: 0 auto 20px;
+
+  padding: 6px 16px;
+
+  border-radius: 20px;
+
+  background: #4f7cff;
+
+  color: #fff;
+
+  font-size: 14px;
+
+}
+
+/* ===== テキスト ===== */
+
+p {
+
+  line-height: 1.8;
+
+  margin-bottom: 10px;
+
+}
+
+/* ===== セクション ===== */
+
+.section {
+
+  margin-top: 40px;
+
+}
+
+.section h2 {
+
+  font-size: 22px;
+
+  margin-bottom: 15px;
+
+  border-left: 6px solid #4f7cff;
+
+  padding-left: 10px;
+
+}
+
+/* ===== スキル ===== */
+
+.skill {
+
+  margin-bottom: 15px;
+
+}
+
+.bar {
+
+  width: 100%;
+
+  height: 10px;
+
+  background: #ddd;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  margin-top: 6px;
+
+}
+
+.fill {
+
+  height: 100%;
+
+  background: linear-gradient(90deg, #4f7cff, #6fd6ff);
+
+  border-radius: 10px;
+
+}
+
+/* スキル割合 */
+
+.w85 { width: 85%; }
+
+.w75 { width: 75%; }
+
+.w90 { width: 90%; }
+
+.w80 { width: 80%; }
+
+/* ===== ボタン・リンク ===== */
+
+.back {
+
+  display: inline-block;
+
+  padding: 10px 20px;
+
+  background: #4f7cff;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  border-radius: 20px;
+
+  transition: transform 0.2s, box-shadow 0.2s;
+
+}
+
+.back:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+
+}
+
+/* ===== SNS ===== */
+
+.sns {
+
+  display: flex;
+
+  gap: 15px;
+
+}
+
+.sns a {
+
+  color: #4f7cff;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+}
+
+/* ===== アニメーション ===== */
+
+.fadein {
+
+  animation: fadeIn 1s ease forwards;
+
+}
+
+@keyframes fadeIn {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+@keyframes fadeUp {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(40px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+/* ===== レスポンシブ ===== */
+
+@media (max-width: 600px) {
+
+  .card {
+
+    padding: 25px;
+
+  }
+
+  h1 {
+
+    font-size: 28px;
+
+  }
+
+}
+ 
