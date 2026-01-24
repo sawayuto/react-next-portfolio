@@ -5,9 +5,17 @@ import SearchField from '@/app/_components/SearchField';
 import { NEWS_LIST_LIMIT } from '@/app/_constants';
 
 export default async function Page() {
-  const { contents: news, totalCount } = await getNewsList({
-    limit: NEWS_LIST_LIMIT,
-  });
+  let news: Awaited<ReturnType<typeof getNewsList>>['contents'] = [];
+  let totalCount = 0;
+  try {
+    const data = await getNewsList({
+      limit: NEWS_LIST_LIMIT,
+    });
+    news = data.contents;
+    totalCount = data.totalCount;
+  } catch (error) {
+    console.error('Failed to fetch news list:', error);
+  }
 
   return (
     <>
