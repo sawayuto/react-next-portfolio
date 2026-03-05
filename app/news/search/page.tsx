@@ -10,10 +10,15 @@ type Props = {
 };
 
 export default async function Page({ searchParams }: Props) {
-  const { contents: news } = await getNewsList({
-    limit: NEWS_LIST_LIMIT,
-    q: searchParams.q,
-  });
+  const query = searchParams.q?.trim();
+  const news = query
+    ? (
+        await getNewsList({
+          limit: NEWS_LIST_LIMIT,
+          q: query,
+        })
+      ).contents
+    : [];
 
   return (
     <>
